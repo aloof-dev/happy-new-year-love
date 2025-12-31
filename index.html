@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year My Love 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            color: #fff;
+            position: relative;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism styles */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        /* Floating Hearts Background */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: float-up 10s ease-in infinite;
+            opacity: 0;
+            filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.6));
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) scale(1.5) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Pages */
+        .page {
+            min-height: 100vh;
+            display: none;
+            position: relative;
+            z-index: 2;
+            padding: 40px 20px;
+        }
+
+        .page.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Music Toggle */
+        .music-toggle {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.15) rotate(15deg);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+        }
+
+        .music-toggle:active {
+            transform: scale(0.95);
+        }
+
+        /* Page 1: Countdown */
+        #page1 {
+            text-align: center;
+        }
+
+        #page1 h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .countdown-timer {
+            font-size: 72px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, #ffc8dd, #ffafcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 40px 0;
+            animation: pulse-glow 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 192, 203, 0.6));
+            padding: 30px 60px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                transform: scale(1);
+                filter: drop-shadow(0 0 20px rgba(255, 192, 203, 0.6));
+            }
+            50% { 
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 40px rgba(255, 105, 180, 0.8));
+            }
+        }
+
+        .cat-meme-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 25px;
+            max-width: 800px;
+            margin-top: 50px;
+        }
+
+        .cat-meme {
+            width: 100%;
+            height: 160px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: float-gentle 4s ease-in-out infinite;
+        }
+
+        .cat-meme:hover {
+            transform: translateY(-15px) scale(1.1) rotate(5deg);
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.4);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .cat-meme:nth-child(2) {
+            animation-delay: 0.7s;
+        }
+
+        .cat-meme:nth-child(3) {
+            animation-delay: 1.4s;
+        }
+
+        .cat-meme:nth-child(4) {
+            animation-delay: 2.1s;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(30px);
+            padding: 50px 40px;
+            border-radius: 35px;
+            text-align: center;
+            max-width: 90%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            animation: modal-pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes modal-pop {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-content h2 {
+            color: #fff;
+            margin-bottom: 35px;
+            font-size: 32px;
+            font-weight: 700;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            font-size: 22px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+            animation: bounce-glow-intense 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bounce-glow-intense {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+            }
+            50% { 
+                transform: scale(1.1); 
+                box-shadow: 0 15px 50px rgba(245, 87, 108, 0.7);
+            }
+        }
+
+        .btn-yes:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(245, 87, 108, 0.6);
+        }
+
+        .btn-no {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-no:hover {
+            animation: wiggle-intense 0.4s ease-in-out;
+        }
+
+        @keyframes wiggle-intense {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-8deg); }
+            75% { transform: rotate(8deg); }
+        }
+
+        .sad-text {
+            color: #fff;
+            margin: 25px 0;
+            font-size: 26px;
+            display: none;
+            font-weight: 600;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Interactive Buttons */
+        .interactive-buttons {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+            max-width: 900px;
+        }
+
+        .interactive-buttons.active {
+            display: grid;
+        }
+
+        .interactive-btn {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+            padding: 30px 20px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            text-align: center;
+            font-size: 19px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .interactive-btn:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.4);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .interactive-btn:active {
+            transform: translateY(-5px) scale(1);
+        }
+
+        /* Page 2: Love Surprise */
+        .profile-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            animation: float-gentle 3s ease-in-out infinite;
+        }
+
+        .love-letter {
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(25px);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            margin: 30px 20px;
+            line-height: 2;
+            font-size: 19px;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .typing-text {
+            border-right: 3px solid rgba(255, 255, 255, 0.8);
+            animation: blink 0.7s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .photo-collage {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px 20px;
+        }
+
+        .photo-item {
+            width: 100%;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-item:hover {
+            transform: translateY(-15px) scale(1.1) rotate(8deg);
+            box-shadow: 0 25px 60px rgba(255, 105, 180, 0.5);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 50px 20px;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(25px);
+            padding: 35px;
+            border-radius: 25px;
+            margin: 25px 0;
+            border-left: 5px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-date {
+            color: #fff;
+            font-weight: 700;
+            font-size: 22px;
+            margin-bottom: 15px;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-item p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Fireworks */
+        .firework {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px currentColor;
+            animation: firework-burst 1.2s ease-out forwards;
+        }
+
+        @keyframes firework-burst {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--x), var(--y));
+                opacity: 0;
+            }
+        }
+
+        h1, h2 {
+            color: white;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce-smooth 2s ease-in-out infinite;
+            font-size: 35px;
+            z-index: 100;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes bounce-smooth {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-15px); }
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 12px 25px;
+            cursor: pointer;
+            z-index: 1000;
+            font-weight: 600;
+            color: white;
+            display: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+        }
+
+        .music-player {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(25px);
+            padding: 45px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            max-width: 600px;
+            margin: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .music-player h2 {
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .music-controls {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .music-controls button {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+            font-size: 16px;
+        }
+
+        .music-controls button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+        }
+
+        .music-player p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .mini-game {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(25px);
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            max-width: 700px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mini-game h2 {
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .bubble {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            position: absolute;
+            cursor: pointer;
+            animation: bubble-float 3s ease-in-out infinite;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .bubble:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes bubble-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+
+        .score {
+            font-size: 36px;
+            color: white;
+            font-weight: 700;
+            margin: 25px 0;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #gameArea {
+            position: relative;
+            height: 350px;
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #nameDisplay {
+            font-size: 36px;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .countdown-timer {
+                font-size: 64px;
+                padding: 25px 50px;
+            }
+            
+            .photo-collage {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            }
+            
+            .timeline {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            body {
+                font-size: 16px;
+            }
+            
+            #page1 h1 {
+                font-size: 36px;
+                padding: 0 20px;
+            }
+            
+            .countdown-timer {
+                font-size: 56px;
+                padding: 20px 40px;
+            }
+            
+            .cat-meme-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                max-width: 500px;
+            }
+            
+            .cat-meme {
+                height: 150px;
+                font-size: 60px;
+            }
+            
+            .modal-content {
+                padding: 40px 30px;
+                max-width: 95%;
+            }
+            
+            .modal-content h2 {
+                font-size: 26px;
+            }
+            
+            .interactive-buttons {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 20px;
+            }
+            
+            .interactive-btn {
+                padding: 25px 15px;
+                font-size: 17px;
+            }
+            
+            .profile-photo {
+                width: 180px;
+                height: 180px;
+                font-size: 80px;
+            }
+            
+            #nameDisplay {
+                font-size: 30px;
+            }
+            
+            .love-letter {
+                padding: 35px;
+                font-size: 17px;
+            }
+            
+            .photo-collage {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 15px;
+            }
+            
+            .photo-item {
+                height: 140px;
+                font-size: 50px;
+            }
+            
+            .timeline-item {
+                padding: 30px;
+            }
+            
+            .timeline-date {
+                font-size: 20px;
+            }
+            
+            .music-player {
+                padding: 35px;
+                max-width: 90%;
+            }
+            
+            .music-player h2 {
+                font-size: 24px;
+            }
+            
+            .mini-game {
+                padding: 40px 30px;
+                max-width: 90%;
+            }
+            
+            .mini-game h2 {
+                font-size: 28px;
+            }
+            
+            #gameArea {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #page1 h1 {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+            
+            .countdown-timer {
+                font-size: 42px;
+                padding: 18px 35px;
+                margin: 30px 0;
+            }
+            
+            .cat-meme-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                max-width: 400px;
+            }
+            
+            .cat-meme {
+                height: 130px;
+                font-size: 50px;
+            }
+            
+            .modal-content {
+                padding: 35px 25px;
+            }
+            
+            .modal-content h2 {
+                font-size: 22px;
+                margin-bottom: 25px;
+            }
+            
+            .btn {
+                padding: 15px 35px;
+                font-size: 18px;
+            }
+            
+            .modal-buttons {
+                gap: 15px;
+            }
+            
+            .sad-text {
+                font-size: 22px;
+            }
+            
+            .interactive-buttons {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .interactive-btn {
+                padding: 25px 20px;
+                font-size: 18px;
+            }
+            
+            .profile-photo {
+                width: 160px;
+                height: 160px;
+                font-size: 70px;
+            }
+            
+            #nameDisplay {
+                font-size: 26px;
+                padding: 0 20px;
+            }
+            
+            .love-letter {
+                padding: 30px 25px;
+                font-size: 16px;
+                margin: 20px 15px;
+            }
+            
+            .photo-collage {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin: 30px 15px;
+            }
+            
+            .photo-item {
+                height: 120px;
+                font-size: 45px;
+            }
+            
+            .timeline {
+                margin: 40px 15px;
+            }
+            
+            .timeline-item {
+                padding: 25px 20px;
+                margin: 20px 0;
+            }
+            
+            .timeline-date {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            
+            .timeline-item p {
+                font-size: 16px;
+            }
+            
+            .music-player {
+                padding: 30px 25px;
+                margin: 20px 15px;
+            }
+            
+            .music-player h2 {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            
+            .music-controls {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .music-controls button {
+                padding: 15px 30px;
+                font-size: 16px;
+                width: 100%;
+            }
+            
+            .music-player p {
+                font-size: 16px;
+            }
+            
+            .mini-game {
+                padding: 35px 25px;
+                margin: 20px 15px;
+            }
+            
+            .mini-game h2 {
+                font-size: 26px;
+            }
+            
+            .mini-game p {
+                font-size: 16px;
+            }
+            
+            .score {
+                font-size: 30px;
+                margin: 20px 0;
+            }
+            
+            #gameArea {
+                height: 280px;
+            }
+            
+            .bubble {
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+            }
+            
+            .music-toggle, .back-btn {
+                top: 20px;
+            }
+            
+            .back-btn {
+                left: 20px;
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+            
+            .music-toggle {
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+            
+            .scroll-indicator {
+                bottom: 30px;
+                font-size: 30px;
+            }
+            
+            h1 {
+                font-size: 28px !important;
+                padding: 0 15px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+            
+            #page1 h1 {
+                font-size: 24px;
+                margin-bottom: 25px;
+            }
+            
+            .countdown-timer {
+                font-size: 36px;
+                padding: 15px 25px;
+                margin: 25px 10px;
+            }
+            
+            .cat-meme-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                max-width: 100%;
+                padding: 0 10px;
+            }
+            
+            .cat-meme {
+                height: 110px;
+                font-size: 40px;
+                border-radius: 20px;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+                border-radius: 25px;
+            }
+            
+            .modal-content h2 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .btn {
+                padding: 12px 28px;
+                font-size: 16px;
+            }
+            
+            .sad-text {
+                font-size: 20px;
+                margin: 18px 0;
+            }
+            
+            .interactive-btn {
+                padding: 22px 18px;
+                font-size: 16px;
+                border-radius: 20px;
+            }
+            
+            .profile-photo {
+                width: 140px;
+                height: 140px;
+                font-size: 60px;
+            }
+            
+            #nameDisplay {
+                font-size: 22px;
+            }
+            
+            .love-letter {
+                padding: 25px 20px;
+                font-size: 15px;
+                line-height: 1.8;
+                margin: 15px 10px;
+                border-radius: 20px;
+            }
+            
+            .photo-collage {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                margin: 25px 10px;
+            }
+            
+            .photo-item {
+                height: 100px;
+                font-size: 38px;
+                border-radius: 20px;
+            }
+            
+            .timeline {
+                margin: 30px 10px;
+            }
+            
+            .timeline-item {
+                padding: 20px 18px;
+                margin: 15px 0;
+                border-radius: 20px;
+            }
+            
+            .timeline-date {
+                font-size: 17px;
+                margin-bottom: 10px;
+            }
+            
+            .timeline-item p {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+            
+            .music-player {
+                padding: 25px 20px;
+                margin: 15px 10px;
+                border-radius: 20px;
+            }
+            
+            .music-player h2 {
+                font-size: 20px;
+            }
+            
+            .music-controls button {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+            
+            .music-player p {
+                font-size: 15px;
+                margin-top: 15px;
+            }
+            
+            .mini-game {
+                padding: 30px 20px;
+                margin: 15px 10px;
+                border-radius: 20px;
+            }
+            
+            .mini-game h2 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            
+            .mini-game p {
+                font-size: 15px;
+            }
+            
+            .score {
+                font-size: 28px;
+                margin: 18px 0;
+            }
+            
+            #gameArea {
+                height: 250px;
+                border-radius: 15px;
+                margin-top: 20px;
+            }
+            
+            .bubble {
+                width: 50px;
+                height: 50px;
+                font-size: 26px;
+            }
+            
+            .music-toggle {
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
+                top: 15px;
+                right: 15px;
+            }
+            
+            .back-btn {
+                top: 15px;
+                left: 15px;
+                padding: 8px 16px;
+                font-size: 14px;
+                border-radius: 40px;
+            }
+            
+            .scroll-indicator {
+                bottom: 25px;
+                font-size: 28px;
+            }
+            
+            h1 {
+                font-size: 24px !important;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            .heart {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .countdown-timer {
+                font-size: 32px;
+                padding: 12px 20px;
+            }
+            
+            .cat-meme {
+                height: 95px;
+                font-size: 35px;
+            }
+            
+            .modal-content {
+                padding: 25px 15px;
+            }
+            
+            .btn {
+                padding: 10px 22px;
+                font-size: 15px;
+            }
+            
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 50px;
+            }
+            
+            .love-letter, .music-player, .mini-game {
+                padding: 20px 15px;
+            }
+            
+            #gameArea {
+                height: 220px;
+            }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .page {
+                padding: 20px 10px;
+            }
+            
+            #page1 h1 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+            
+            .countdown-timer {
+                font-size: 32px;
+                padding: 12px 25px;
+                margin: 15px 0;
+            }
+            
+            .cat-meme-container {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                max-width: 600px;
+            }
+            
+            .cat-meme {
+                height: 80px;
+                font-size: 35px;
+            }
+            
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+                font-size: 45px;
+                margin: 10px auto;
+            }
+            
+            #nameDisplay {
+                font-size: 20px;
+                margin: 10px 0;
+            }
+            
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
+        /* ========== MINI-GAMES MODULE STYLES (SELF-CONTAINED) ========== */
+        .lmg-hub-inline {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .lmg-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+        }
+
+        .lmg-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .lmg-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(25px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+            padding: 35px 25px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .lmg-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.4);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .lmg-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .lmg-card h3 {
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .lmg-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 16px;
+        }
+
+        /* Game Modal */
+        .lmg-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 3100;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lmg-modal.active {
+            display: flex;
+        }
+
+        .lmg-game-container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(30px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 25px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .lmg-game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .lmg-game-title {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .lmg-game-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .lmg-help-btn,
+        .lmg-close-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .lmg-help-btn:hover,
+        .lmg-close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .lmg-game-screen {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            min-height: 400px;
+        }
+
+        #lmg-canvas {
+            display: block;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(180deg, #ffd1dc 0%, #ffb6c1 100%);
+        }
+
+        .lmg-game-ui {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .lmg-score-display {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #ff1493;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .lmg-lives-display {
+            font-size: 24px;
+        }
+
+        .lmg-start-screen,
+        .lmg-gameover-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .lmg-start-screen.active,
+        .lmg-gameover-screen.active {
+            display: flex;
+        }
+
+        .lmg-start-title {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .lmg-start-btn,
+        .lmg-retry-btn,
+        .lmg-hub-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+            margin: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .lmg-start-btn:hover,
+        .lmg-retry-btn:hover,
+        .lmg-hub-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+        }
+
+        .lmg-gameover-screen h3 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .lmg-final-score {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        /* How to Play Panel */
+        .lmg-howto-panel {
+            position: absolute;
+            right: -320px;
+            top: 0;
+            width: 300px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+            transition: right 0.4s ease;
+        }
+
+        .lmg-howto-panel.active {
+            right: -10px;
+        }
+
+        .lmg-howto-panel h3 {
+            color: #ff1493;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .lmg-instructions {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .lmg-instructions li {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .lmg-instructions li::before {
+            content: '💖';
+            position: absolute;
+            left: 0;
+        }
+
+        .lmg-howto-close {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Responsive for Mini-Games */
+        @media (max-width: 768px) {
+            .lmg-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .lmg-card {
+                padding: 30px 20px;
+            }
+
+            .lmg-game-container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .lmg-game-title {
+                font-size: 22px;
+            }
+
+            #lmg-canvas {
+                height: 300px;
+            }
+
+            .lmg-howto-panel {
+                position: fixed;
+                right: auto;
+                left: 0;
+                bottom: -100%;
+                top: auto;
+                width: 100%;
+                height: auto;
+                max-height: 70vh;
+                border-radius: 30px 30px 0 0;
+                transition: bottom 0.4s ease;
+            }
+
+            .lmg-howto-panel.active {
+                bottom: 0;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lmg-icon {
+                font-size: 50px;
+            }
+
+            .lmg-card h3 {
+                font-size: 20px;
+            }
+
+            #lmg-canvas {
+                height: 250px;
+            }
+
+            .lmg-start-title {
+                font-size: 24px;
+            }
+
+            .lmg-gameover-screen h3 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- Music Toggle -->
+    <button class="music-toggle" id="musicToggle">🎵</button>
+    <button class="back-btn" id="backBtn">← Back</button>
+
+    <!-- Audio -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Page 1: Countdown -->
+    <div class="page active" id="page1">
+        <h1>🌟 Counting Down to Our New Year 🌟</h1>
+        <div class="countdown-timer" id="countdown">00:00:00</div>
+        <div class="cat-meme-container">
+            <div class="cat-meme">😺</div>
+            <div class="cat-meme">😻</div>
+            <div class="cat-meme">😽</div>
+            <div class="cat-meme">🐱</div>
+        </div>
+    </div>
+
+    <!-- Gift Modal -->
+    <div class="modal" id="giftModal">
+        <div class="modal-content">
+            <h2>🎁 Do you want to open your New Year gift? 🎁</h2>
+            <div class="modal-buttons">
+                <button class="btn btn-yes" id="btnYes"><span>YES! 💖</span></button>
+                <button class="btn btn-no" id="btnNo"><span>No...</span></button>
+            </div>
+            <div class="sad-text" id="sadText">Don't you love me?? 🥺💔</div>
+            <button class="btn btn-yes" id="tryAgain" style="display: none; margin-top: 20px;"><span>Try Again 💕</span></button>
+            
+            <div class="interactive-buttons" id="interactiveButtons">
+                <div class="interactive-btn" data-page="5">🎵 Your Favourite Song</div>
+                <div class="interactive-btn" data-page="3">📖 Our Story</div>
+                <div class="interactive-btn" data-page="4">📸 Our Memories</div>
+                <div class="interactive-btn" data-page="6">💌 Special Message</div>
+                <div class="interactive-btn" data-page="7">🎮 Mini Fun Games</div>
+                <div class="interactive-btn" id="catMemeGen">😹 Random Cat Meme</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Love Surprise -->
+    <div class="page" id="page2">
+        <h1>💖 You Are My Everything 💖</h1>
+        <div class="profile-photo">👸</div>
+        <h2 id="nameDisplay">My Beautiful Love</h2>
+        <div class="love-letter">
+            <p id="typingLetter" class="typing-text"></p>
+        </div>
+        <div class="photo-collage">
+            <div class="photo-item">📷</div>
+            <div class="photo-item">😺</div>
+            <div class="photo-item">💑</div>
+            <div class="photo-item">😻</div>
+            <div class="photo-item">❤️</div>
+            <div class="photo-item">😽</div>
+        </div>
+        <div class="scroll-indicator">👇</div>
+    </div>
+
+    <!-- Page 3: Timeline -->
+    <div class="page" id="page3">
+        <h1>📖 Our Beautiful Story 📖</h1>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">🌟 The Day We Met</div>
+                <p>It all started when our eyes met across the room... 😻</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">💕 First Date</div>
+                <p>The most magical evening of my life! 🌙✨</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">❤️ Became Official</div>
+                <p>The day you said yes and made me the happiest! 🎉</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">🎊 Our Adventures</div>
+                <p>Every moment with you is an adventure! 🌈</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">💖 Today & Forever</div>
+                <p>Here's to many more years of love and laughter! 🥰</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4: Memories Gallery -->
+    <div class="page" id="page4">
+        <h1>📸 Our Precious Memories 📸</h1>
+        <div class="photo-collage">
+            <div class="photo-item">🌅</div>
+            <div class="photo-item">😺</div>
+            <div class="photo-item">🎂</div>
+            <div class="photo-item">😻</div>
+            <div class="photo-item">🌹</div>
+            <div class="photo-item">😽</div>
+            <div class="photo-item">🎄</div>
+            <div class="photo-item">🐱</div>
+            <div class="photo-item">🌸</div>
+        </div>
+    </div>
+
+    <!-- Page 5: Music Player -->
+    <div class="page" id="page5">
+        <h1>🎵 Your Favourite Song 🎵</h1>
+        <div class="music-player">
+            <h2>Our Special Song 💕</h2>
+            <div class="music-controls">
+                <button id="playBtn">▶️ Play</button>
+                <button id="pauseBtn">⏸️ Pause</button>
+            </div>
+            <p style="margin-top: 20px;">Every time I hear this, I think of you... 💖</p>
+        </div>
+    </div>
+
+    <!-- Page 6: Special Message -->
+    <div class="page" id="page6">
+        <h1>💌 A Special Message For You 💌</h1>
+        <div class="love-letter">
+            <p id="specialMessage" class="typing-text"></p>
+        </div>
+    </div>
+
+    <!-- Page 7: Mini Games Hub -->
+    <div class="page" id="page7">
+        <h1>🎮 Let's Play Together! 🎮</h1>
+        
+        <div class="lmg-hub-inline">
+            <p class="lmg-subtitle">Choose your favorite game!</p>
+            
+            <div class="lmg-grid">
+                <div class="lmg-card" data-game="flappy">
+                    <div class="lmg-icon">🐱💖</div>
+                    <h3>Flappy Heart Cat</h3>
+                    <p>Fly through love gates!</p>
+                </div>
+                
+                <div class="lmg-card" data-game="pop">
+                    <div class="lmg-icon">💞🐾</div>
+                    <h3>Pop Heart Cats</h3>
+                    <p>Pop cute bubbles fast!</p>
+                </div>
+                
+                <div class="lmg-card" data-game="stack">
+                    <div class="lmg-icon">💗🐱</div>
+                    <h3>Stack Love Cats</h3>
+                    <p>Stack hearts perfectly!</p>
+                </div>
+                
+                <div class="lmg-card" data-game="dodge">
+                    <div class="lmg-icon">💓🐾</div>
+                    <h3>Heart Dodge</h3>
+                    <p>Dodge & survive!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Modal -->
+    <div class="lmg-modal">
+        <div class="lmg-game-container">
+            <div class="lmg-game-header">
+                <h2 class="lmg-game-title"></h2>
+                <div class="lmg-game-controls">
+                    <button class="lmg-help-btn">❓</button>
+                    <button class="lmg-close-btn">✖</button>
+                </div>
+            </div>
+            
+            <div class="lmg-game-screen">
+                <canvas id="lmg-canvas"></canvas>
+                <div class="lmg-game-ui">
+                    <div class="lmg-score-display">Score: <span>0</span></div>
+                    <div class="lmg-lives-display"></div>
+                </div>
+                
+                <div class="lmg-start-screen">
+                    <h3 class="lmg-start-title"></h3>
+                    <button class="lmg-start-btn">Start Game</button>
+                </div>
+                
+                <div class="lmg-gameover-screen">
+                    <h3>Game Over! 💔</h3>
+                    <p class="lmg-final-score"></p>
+                    <button class="lmg-retry-btn">Try Again</button>
+                    <button class="lmg-hub-btn">Back to Hub</button>
+                </div>
+            </div>
+            
+            <!-- How to Play Panel -->
+            <div class="lmg-howto-panel">
+                <h3>How to Play</h3>
+                <ul class="lmg-instructions"></ul>
+                <button class="lmg-howto-close">Got it! ✓</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const DEV_SKIP_COUNTDOWN = false; // Set to true to skip countdown for testing
+        const NEW_YEAR_DATE = new Date('2026-01-01T00:00:00').getTime();
+
+        let musicPlaying = false;
+        let currentPage = 1;
+        let score = 0;
+
+        const bgMusic = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        const giftModal = document.getElementById('giftModal');
+        const btnYes = document.getElementById('btnYes');
+        const btnNo = document.getElementById('btnNo');
+        const sadText = document.getElementById('sadText');
+        const tryAgain = document.getElementById('tryAgain');
+        const interactiveButtons = document.getElementById('interactiveButtons');
+        const backBtn = document.getElementById('backBtn');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createFloatingHearts();
+            if (DEV_SKIP_COUNTDOWN) {
+                setTimeout(() => showNewYearContent(), 1000);
+            } else {
+                startCountdown();
+            }
+            setupInteractions();
+        });
+
+        function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            setInterval(() => {
+                if (container.children.length < 20) {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.textContent = ['💖', '💕', '💗', '💓', '💝'][Math.floor(Math.random() * 5)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDuration = (Math.random() * 5 + 8) + 's';
+                    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                    container.appendChild(heart);
+                    setTimeout(() => heart.remove(), 10000);
+                }
+            }, 600);
+        }
+
+        function startCountdown() {
+            const countdownEl = document.getElementById('countdown');
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = NEW_YEAR_DATE - now;
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    showNewYearContent();
+                    return;
+                }
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownEl.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function showNewYearContent() {
+            const countdownEl = document.getElementById('countdown');
+            countdownEl.textContent = 'Happy New Year, my love 💖';
+            createFireworks();
+            setTimeout(() => {
+                giftModal.classList.add('active');
+            }, 2000);
+        }
+
+        function createFireworks() {
+            for (let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.style.left = Math.random() * window.innerWidth + 'px';
+                    firework.style.top = Math.random() * window.innerHeight / 2 + 'px';
+                    firework.style.background = ['#ff69b4', '#ff1493', '#ffc0cb', '#ff85c1', '#fff'][Math.floor(Math.random() * 5)];
+                    
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = Math.random() * 250 + 150;
+                    firework.style.setProperty('--x', Math.cos(angle) * distance + 'px');
+                    firework.style.setProperty('--y', Math.sin(angle) * distance + 'px');
+                    
+                    document.body.appendChild(firework);
+                    setTimeout(() => firework.remove(), 1200);
+                }, i * 40);
+            }
+        }
+
+        function createConfetti() {
+            for (let i = 0; i < 120; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * window.innerWidth + 'px';
+                    confetti.style.top = '-10px';
+                    confetti.style.background = ['#ff69b4', '#ff1493', '#ffc0cb', '#ff85c1', '#fff', '#f093fb'][Math.floor(Math.random() * 6)];
+                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 25);
+            }
+        }
+
+        function setupInteractions() {
+            musicToggle.addEventListener('click', () => {
+                if (musicPlaying) {
+                    bgMusic.pause();
+                    musicToggle.textContent = '🎵';
+                } else {
+                    bgMusic.play();
+                    musicToggle.textContent = '🔊';
+                }
+                musicPlaying = !musicPlaying;
+            });
+
+            btnYes.addEventListener('click', () => {
+                createConfetti();
+                createHeartExplosion();
+                setTimeout(() => {
+                    btnYes.style.display = 'none';
+                    btnNo.style.display = 'none';
+                    document.querySelector('.modal-content h2').textContent = '🎁 Choose Your Surprise! 🎁';
+                    interactiveButtons.classList.add('active');
+                }, 1000);
+            });
+
+            let noClickCount = 0;
+            btnNo.addEventListener('click', () => {
+                noClickCount++;
+                sadText.style.display = 'block';
+                if (noClickCount === 1) {
+                    tryAgain.style.display = 'block';
+                }
+            });
+
+            btnNo.addEventListener('mouseenter', (e) => {
+                const modalContent = document.querySelector('.modal-content');
+                const rect = modalContent.getBoundingClientRect();
+                const newX = Math.random() * (rect.width - 150);
+                const newY = Math.random() * (rect.height - 100);
+                btnNo.style.position = 'absolute';
+                btnNo.style.left = newX + 'px';
+                btnNo.style.top = newY + 'px';
+            });
+
+            tryAgain.addEventListener('click', () => {
+                sadText.style.display = 'none';
+                tryAgain.style.display = 'none';
+                noClickCount = 0;
+                btnNo.style.position = 'relative';
+                btnNo.style.left = '0';
+                btnNo.style.top = '0';
+            });
+
+            document.querySelectorAll('.interactive-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const pageNum = btn.getAttribute('data-page');
+                    if (pageNum) {
+                        switchPage(parseInt(pageNum));
+                        giftModal.classList.remove('active');
+                    } else if (btn.id === 'catMemeGen') {
+                        showRandomCatMeme();
+                    }
+                });
+            });
+
+            backBtn.addEventListener('click', () => {
+                switchPage(1);
+                giftModal.classList.add('active');
+            });
+
+            document.querySelectorAll('.cat-meme').forEach(cat => {
+                cat.addEventListener('click', (e) => {
+                    createMiniHearts(e.clientX, e.clientY);
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.btn') && !e.target.closest('.interactive-btn') && !e.target.closest('.music-toggle') && !e.target.closest('.back-btn')) {
+                    createMiniHearts(e.clientX, e.clientY);
+                }
+            });
+
+            document.getElementById('playBtn').addEventListener('click', () => {
+                bgMusic.play();
+                createPulsingEffect();
+            });
+
+            document.getElementById('pauseBtn').addEventListener('click', () => {
+                bgMusic.pause();
+            });
+
+            startTypingEffect();
+            setupScrollAnimations();
+            setupMiniGame();
+        }
+
+        function createMiniHearts(x, y) {
+            for (let i = 0; i < 6; i++) {
+                const heart = document.createElement('div');
+                heart.textContent = ['💖', '💕', '💗'][Math.floor(Math.random() * 3)];
+                heart.style.position = 'fixed';
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
+                heart.style.fontSize = '24px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '9999';
+                heart.style.animation = 'float-up 2s ease-out forwards';
+                
+                const angle = (Math.PI * 2 * i) / 6;
+                const distance = 60;
+                heart.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
+                
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 2000);
+            }
+        }
+
+        function createHeartExplosion() {
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.textContent = ['💖', '💕', '💗', '💓'][Math.floor(Math.random() * 4)];
+                    heart.style.position = 'fixed';
+                    heart.style.left = '50%';
+                    heart.style.top = '50%';
+                    heart.style.fontSize = '35px';
+                    heart.style.pointerEvents = 'none';
+                    heart.style.zIndex = '9999';
+                    
+                    const angle = (Math.PI * 2 * i) / 40;
+                    const distance = Math.random() * 350 + 150;
+                    heart.style.animation = 'firework-burst 1.5s ease-out forwards';
+                    heart.style.setProperty('--x', Math.cos(angle) * distance + 'px');
+                    heart.style.setProperty('--y', Math.sin(angle) * distance + 'px');
+                    
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 1500);
+                }, i * 15);
+            }
+        }
+
+        function switchPage(pageNum) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(`page${pageNum}`).classList.add('active');
+            currentPage = pageNum;
+            
+            if (pageNum !== 1) {
+                backBtn.style.display = 'block';
+            } else {
+                backBtn.style.display = 'none';
+            }
+
+            if (pageNum === 2) {
+                startTypingEffect();
+            } else if (pageNum === 6) {
+                startSpecialMessage();
+            }
+        }
+
+        function startTypingEffect() {
+            const text = "My dearest love, every moment with you is a treasure. You light up my world like fireworks on New Year's Eve. Your smile makes my heart skip a beat, and your laughter is my favorite sound in the universe. I am so grateful for every second we spend together. Here's to another year of adventures, cuddles, and endless love! You are my everything. Happy New Year, my beautiful angel! 💖✨🎆";
+            const typingEl = document.getElementById('typingLetter');
+            let index = 0;
+            
+            typingEl.textContent = '';
+            
+            function type() {
+                if (index < text.length) {
+                    typingEl.textContent += text.charAt(index);
+                    index++;
+                    
+                    if (Math.random() > 0.92) {
+                        const rect = typingEl.getBoundingClientRect();
+                        createMiniHearts(rect.right, rect.top + Math.random() * rect.height);
+                    }
+                    
+                    setTimeout(type, 50);
+                } else {
+                    typingEl.classList.remove('typing-text');
+                }
+            }
+            
+            type();
+        }
+
+        function startSpecialMessage() {
+            const text = "To the most amazing person in my life... 💕\n\nYou make every day brighter, every challenge easier, and every moment more meaningful. Your kindness, your humor, your beautiful soul - everything about you makes me fall in love all over again. 💖\n\nAs we step into this new year together, I want you to know that you are my greatest blessing. Thank you for being you, for loving me, and for making life an incredible adventure. 🌟\n\nI promise to always cherish you, support you, and make you smile. Here's to us, to our love, and to a year filled with endless possibilities! 🎆\n\nForever yours,\nYour biggest fan 💝";
+            const typingEl = document.getElementById('specialMessage');
+            let index = 0;
+            
+            typingEl.textContent = '';
+            
+            function type() {
+                if (index < text.length) {
+                    typingEl.textContent += text.charAt(index);
+                    index++;
+                    
+                    if (Math.random() > 0.96) {
+                        const rect = typingEl.getBoundingClientRect();
+                        createMiniHearts(rect.right, rect.top + Math.random() * rect.height);
+                    }
+                    
+                    setTimeout(type, 30);
+                } else {
+                    typingEl.classList.remove('typing-text');
+                }
+            }
+            
+            type();
+        }
+
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        if (Math.random() > 0.6) {
+                            createConfetti();
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                observer.observe(item);
+            });
+
+            window.addEventListener('scroll', () => {
+                document.querySelectorAll('.photo-item').forEach((item, index) => {
+                    const rect = item.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        setTimeout(() => {
+                            item.style.animation = 'float-gentle 1s ease-in-out';
+                            setTimeout(() => {
+                                item.style.animation = '';
+                            }, 1000);
+                        }, index * 50);
+                    }
+                });
+            });
+        }
+
+        function showRandomCatMeme() {
+            const memes = ['😺', '😸', '😹', '😻', '😼', '😽', '🙀', '😿', '😾', '🐱'];
+            const randomMeme = memes[Math.floor(Math.random() * memes.length)];
+            
+            const memeEl = document.createElement('div');
+            memeEl.style.position = 'fixed';
+            memeEl.style.left = '50%';
+            memeEl.style.top = '50%';
+            memeEl.style.transform = 'translate(-50%, -50%) scale(0)';
+            memeEl.style.fontSize = '180px';
+            memeEl.style.zIndex = '10000';
+            memeEl.style.transition = 'all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+            memeEl.textContent = randomMeme;
+            memeEl.style.filter = 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5))';
+            
+            document.body.appendChild(memeEl);
+            
+            setTimeout(() => {
+                memeEl.style.transform = 'translate(-50%, -50%) scale(1) rotate(360deg)';
+            }, 10);
+            
+            createConfetti();
+            
+            setTimeout(() => {
+                memeEl.style.transform = 'translate(-50%, -50%) scale(0) rotate(720deg)';
+            }, 2000);
+            
+            setTimeout(() => {
+                memeEl.remove();
+            }, 2500);
+        }
+
+        function createPulsingEffect() {
+            const page5 = document.getElementById('page5');
+            page5.style.animation = 'pulse-glow 1.5s ease-in-out infinite';
+        }
+
+        function setupMiniGame() {
+            const gameArea = document.getElementById('gameArea');
+            const scoreEl = document.getElementById('score');
+            
+            setInterval(() => {
+                if (currentPage === 7 && gameArea.children.length < 6) {
+                    const bubble = document.createElement('div');
+                    bubble.className = 'bubble';
+                    bubble.textContent = ['💖', '💕', '💗'][Math.floor(Math.random() * 3)];
+                    bubble.style.left = Math.random() * (gameArea.offsetWidth - 60) + 'px';
+                    bubble.style.top = Math.random() * (gameArea.offsetHeight - 60) + 'px';
+                    bubble.style.animationDelay = Math.random() * 2 + 's';
+                    
+                    bubble.addEventListener('click', () => {
+                        score++;
+                        scoreEl.textContent = score;
+                        createMiniHearts(
+                            bubble.getBoundingClientRect().left + 30,
+                            bubble.getBoundingClientRect().top + 30
+                        );
+                        bubble.style.transform = 'scale(1.5)';
+                        bubble.style.opacity = '0';
+                        setTimeout(() => bubble.remove(), 300);
+                    });
+                    
+                    gameArea.appendChild(bubble);
+                    
+                    setTimeout(() => {
+                        if (bubble.parentNode) {
+                            bubble.style.opacity = '0';
+                            setTimeout(() => bubble.remove(), 300);
+                        }
+                    }, 5000);
+                }
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
